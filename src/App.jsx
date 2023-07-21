@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import "./App.css";
 import GalleryBackSlot from "./components/Gallery/GalleryBackSlot";
-import GalleryMonday from "./components/Gallery/GalleryMonday";
+import GalleryThursday from "./components/Gallery/GalleryThursday";
 import Profil from "./components/Profil/Profil";
 import ScrollArrows from "./components/ScrollArrows";
 import Home from "./components/Home";
@@ -87,7 +87,7 @@ function App() {
       <hr className="w-1/3 mx-auto my-32" />
 
       <div ref={(ref) => (divsRef.current[3] = ref)} className="box box-3">
-        <GalleryMonday divCount={divCount} visibleDivs={visibleDivs} />
+        <GalleryThursday divCount={divCount} visibleDivs={visibleDivs} />
       </div>
     </div>
   );

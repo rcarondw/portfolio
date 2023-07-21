@@ -101,13 +101,17 @@ export default function Gallery({ divCount, visibleDivs }) {
         <div className="w-full flex justify-around text-3xl font-extrabold">
           <p
             onClick={() => setisActive(true)}
-            className="border rounded-full text-center p-4 cursor-pointer"
+            className={`  text-center italic p-4 cursor-pointer hover:border-b ${
+              isActive ? "border-b" : ""
+            } `}
           >
             Détails
           </p>
           <p
             onClick={() => setisActive(false)}
-            className="border rounded-full text-center p-4 cursor-pointer"
+            className={`  text-center italic p-4 cursor-pointer hover:border-b ${
+              isActive ? "border-b" : ""
+            } `}
           >
             Résumé
           </p>
