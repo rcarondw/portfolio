@@ -1,0 +1,9 @@
+/* .bigBox {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.box {
+  scroll-snap-align: start;
+} */
