@@ -9,27 +9,6 @@ import Home from "./components/Home";
 function App() {
   const [divCount, setDivCount] = useState(0);
 
-  // useEffect(() => {
-  //   const handleMouseWheel = (event) => {
-  //     event.preventDefault();
-
-  //     const scrollAmount = event.deltaY;
-  //     const scrollDirection = scrollAmount > 0 ? "down" : "up";
-
-  //     if (scrollDirection === "down") {
-  //       setDivCount((prevCount) => (prevCount + 1 <= 3 ? prevCount + 1 : 3));
-  //     } else {
-  //       setDivCount((prevCount) => (prevCount - 1 >= 0 ? prevCount - 1 : 0));
-  //     }
-  //   };
-
-  //   window.addEventListener("wheel", handleMouseWheel);
-
-  //   return () => {
-  //     window.removeEventListener("wheel", handleMouseWheel);
-  //   };
-  // }, [, divCount]);
-
   useEffect(() => {
     const targetElement = document.querySelector(`.box-${divCount}`);
     if (targetElement) {
