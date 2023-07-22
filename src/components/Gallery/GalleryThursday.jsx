@@ -59,55 +59,58 @@ export default function Gallery({ divCount, visibleDivs }) {
   };
 
   return (
-    <div className="gallery h-screen select-none relative">
-      <div ref={galleryContainer} className="gallery-container">
-        <img
-          src={image1}
-          alt="slide_image"
-          className="rounded-md gallery-item gallery-item-1"
-          data-index="1"
-          // onClick={(e) => handleFocus(e)
-        />
+    <div className="gallery h-screen select-none flex flex-col justify-evenly relative p-8">
+      <div className="h-1/2">
+        <div ref={galleryContainer} className="gallery-container">
+          <img
+            src={image1}
+            alt="slide_image"
+            className="rounded-md gallery-item gallery-item-1"
+            data-index="1"
+            // onClick={(e) => handleFocus(e)
+          />
 
-        <img
-          src={image2}
-          alt="slide_image"
-          className="rounded-md gallery-item gallery-item-2"
-          data-index="2"
-        />
+          <img
+            src={image2}
+            alt="slide_image"
+            className="rounded-md gallery-item gallery-item-2"
+            data-index="2"
+          />
 
-        <img
-          src={image3}
-          alt="slide_image"
-          className="rounded-md gallery-item gallery-item-3"
-          data-index="3"
-        />
+          <img
+            src={image3}
+            alt="slide_image"
+            className="rounded-md gallery-item gallery-item-3"
+            data-index="3"
+          />
 
-        <img
-          src={image4}
-          alt="slide_image"
-          className="rounded-md gallery-item gallery-item-4"
-          data-index="4"
-        />
+          <img
+            src={image4}
+            alt="slide_image"
+            className="rounded-md gallery-item gallery-item-4"
+            data-index="4"
+          />
 
-        <img
-          src={image5}
-          alt="slide_image"
-          className="rounded-md gallery-item gallery-item-5"
-          data-index="5"
-        />
+          <img
+            src={image5}
+            alt="slide_image"
+            className="rounded-md gallery-item gallery-item-5"
+            data-index="5"
+          />
+        </div>
+        <div className="gallery-controls text-slate-100 mb-8">
+          <BsArrowLeftCircle
+            onClick={galleryOnClickPrev}
+            className="text-2xl cursor-pointer mx-4 button-prev hover:scale-110"
+          />
+          <BsArrowLeftCircle
+            onClick={galleryOnClickNext}
+            className="rotate-180 text-2xl cursor-pointer mx-4 hover:scale-110"
+          />
+        </div>
       </div>
-      <div className="gallery-controls text-slate-100 mb-8">
-        <BsArrowLeftCircle
-          onClick={galleryOnClickPrev}
-          className="text-2xl cursor-pointer mx-4 button-prev hover:scale-110"
-        />
-        <BsArrowLeftCircle
-          onClick={galleryOnClickNext}
-          className="rotate-180 text-2xl cursor-pointer mx-4 hover:scale-110"
-        />
-      </div>
-      <div className="flex flex-col items-center justify-center w-1/2 mx-auto  m-4 text-slate-100">
+      <div className="flex flex-col items-center justify-start w-2/3 h-1/2 mx-auto mt-16  text-slate-100">
+        <hr className="w-1/5 mx-auto my-8" />
         <div className="w-full flex justify-around text-3xl font-extrabold">
           <p
             onClick={() => setisActive(true)}
@@ -127,7 +130,7 @@ export default function Gallery({ divCount, visibleDivs }) {
           </p>
         </div>
         {isActive && (
-          <div className="w-full flex flex-col items-center text-lg leading-10 tracking-wide p-8">
+          <div className="w-full flex flex-col items-center leading-10 tracking-wide p-8">
             <p>
               {" "}
               <span className="font-bold">Nom du projet:</span> Thursday

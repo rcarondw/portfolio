@@ -1,9 +1,36 @@
-/* .bigBox {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
 }
 
-.box {
-  scroll-snap-align: start;
-} */
+body {
+  background: black;
+}
+
+html {
+  scrollbar-width: normal;
+}
+
+html::-webkit-scrollbar {
+  width: 1vh;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+html::-webkit-scrollbar-track:hover {
+  cursor: pointer;
+}
+
+.home {
+  background-image: url("/home/rcarondw/portfolio/portfolio/src/assets/Accueil.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}

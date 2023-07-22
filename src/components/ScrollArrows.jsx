@@ -35,8 +35,8 @@ export default function ScrollArrows({ divCount, setDivCount }) {
     <div className=" w-10 h-screen right-8 fixed z-50 flex flex-col justify-between items-center py-8">
       <BsArrowUpCircle
         onClick={handleScrollPrev}
-        className={`  text-4xl cursor-pointer ${
-          stopPrev ? "text-slate-600" : "text-slate-100"
+        className={`  text-4xl cursor-pointer  ${
+          stopPrev ? "text-slate-600" : "text-slate-100 hover:scale-110"
         }`}
       />
       <div className="h-full flex flex-col justify-center items-center gap-2 ">
@@ -67,8 +67,8 @@ export default function ScrollArrows({ divCount, setDivCount }) {
       </div>
       <BsArrowUpCircle
         onClick={handleScrollNext}
-        className={`rotate-180 text-4xl  cursor-pointer ${
-          stopNext ? "text-slate-600" : "text-slate-100"
+        className={`rotate-180 text-4xl  cursor-pointer  ${
+          stopNext ? "text-slate-600" : "text-slate-100 hover:scale-110"
         }`}
       />
     </div>

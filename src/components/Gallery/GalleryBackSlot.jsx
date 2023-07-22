@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import image1 from "../../assets/projetPd1.jpg";
 import image2 from "../../assets/projetPd2.jpg";
 import image3 from "../../assets/projetPd3.jpg";
+import image4 from "../../assets/projetPd4.jpg";
+import image5 from "../../assets/projetPd5.jpg";
 import { BsArrowLeftCircle } from "react-icons/bs";
 
 export default function Gallery({ divCount, visibleDivs }) {
@@ -50,54 +52,57 @@ export default function Gallery({ divCount, visibleDivs }) {
   };
 
   return (
-    <div className="gallery h-screen select-none">
-      <div ref={galleryContainer} className="gallery-container">
-        <img
-          src={image1}
-          alt="slide_image"
-          className="rounded-md gallery-item gallery-item-1"
-          data-index="1"
-        />
+    <div className="gallery h-screen flex flex-col justify-evenly select-none p-8">
+      <div className="h-1/2">
+        <div ref={galleryContainer} className="gallery-container">
+          <img
+            src={image1}
+            alt="slide_image"
+            className="rounded-md gallery-item gallery-item-1"
+            data-index="1"
+          />
 
-        <img
-          src={image1}
-          alt="slide_image"
-          className="rounded-md gallery-item gallery-item-2"
-          data-index="2"
-        />
+          <img
+            src={image2}
+            alt="slide_image"
+            className="rounded-md gallery-item gallery-item-2"
+            data-index="2"
+          />
 
-        <img
-          src={image2}
-          alt="slide_image"
-          className="rounded-md gallery-item gallery-item-3"
-          data-index="3"
-        />
+          <img
+            src={image3}
+            alt="slide_image"
+            className="rounded-md gallery-item gallery-item-3"
+            data-index="3"
+          />
 
-        <img
-          src={image3}
-          alt="slide_image"
-          className="rounded-md gallery-item gallery-item-4"
-          data-index="4"
-        />
+          <img
+            src={image5}
+            alt="slide_image"
+            className="rounded-md gallery-item gallery-item-4"
+            data-index="4"
+          />
 
-        <img
-          src={image3}
-          alt="slide_image"
-          className="rounded-md gallery-item gallery-item-5"
-          data-index="5"
-        />
+          <img
+            src={image4}
+            alt="slide_image"
+            className="rounded-md gallery-item gallery-item-5"
+            data-index="5"
+          />
+        </div>
+        <div className="gallery-controls text-slate-100 mb-8">
+          <BsArrowLeftCircle
+            onClick={galleryOnClickPrev}
+            className="text-2xl cursor-pointer mx-4 button-prev hover:scale-110"
+          />
+          <BsArrowLeftCircle
+            onClick={galleryOnClickNext}
+            className="rotate-180 text-2xl cursor-pointer mx-4 hover:scale-110"
+          />
+        </div>
       </div>
-      <div className="gallery-controls text-slate-100 mb-8">
-        <BsArrowLeftCircle
-          onClick={galleryOnClickPrev}
-          className="text-2xl cursor-pointer mx-4 button-prev hover:scale-110"
-        />
-        <BsArrowLeftCircle
-          onClick={galleryOnClickNext}
-          className="rotate-180 text-2xl cursor-pointer mx-4 hover:scale-110"
-        />
-      </div>
-      <div className="flex flex-col items-center justify-center w-1/2 mx-auto  m-4 text-slate-100">
+      <div className="flex flex-col items-center justify-start w-2/3 h-1/2 mx-auto mt-16  text-slate-100">
+        <hr className="w-1/5 mx-auto my-8" />
         <div className="w-full flex justify-around text-3xl font-extrabold">
           <p
             onClick={() => setisActive(true)}
@@ -110,14 +115,14 @@ export default function Gallery({ divCount, visibleDivs }) {
           <p
             onClick={() => setisActive(false)}
             className={`  text-center italic p-4 cursor-pointer hover:border-b ${
-              isActive ? "border-b" : ""
+              !isActive ? "border-b" : ""
             } `}
           >
             Résumé
           </p>
         </div>
         {isActive && (
-          <div className="w-full flex flex-col items-center justify-center text-lg leading-10 tracking-wide p-8 ">
+          <div className="w-full flex flex-col items-center text-lg leading-10 tracking-wide p-8 ">
             <p>
               <span className="font-bold">Nom du projet :</span> Back Slot
             </p>
@@ -134,16 +139,16 @@ export default function Gallery({ divCount, visibleDivs }) {
           </div>
         )}
         {!isActive && (
-          <p className="w-full  text-center p-8 leading-10 tracking-wide ">
+          <p className="w-full  text-center py-8 leading-10 tracking-wide ">
             Il s'agit d'une plateforme servant à faciliter et centraliser les
             échanges d’informations entre l’agence et les clients, de rendre
-            plus visible la progression des projet pour les deux parties et
+            plus visible la progression des projets pour les deux parties et
             permettre une communication plus rapide et précise sur les attendues
             et modifications nécessaires à la réalisation des projets. C'est le
-            projet que j'ai présenté pour mon dîplome qui m'a vallut les
+            projet que j'ai présenté pour mon diplôme qui m'a vallu les
             félicitations du jury. J'ai tout réalisé seul, de l'expression des
-            besoins à la mise en production, en passant par le cahier des charge
-            et le design.
+            besoins à la mise en production, en passant par le cahier des
+            charges et le design.
           </p>
         )}
       </div>

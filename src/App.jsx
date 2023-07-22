@@ -54,8 +54,8 @@ function App() {
         }))
         .filter(
           ({ top, bottom }) =>
-            top >= -window.innerHeight * 0.1 &&
-            bottom <= window.innerHeight * 1.1
+            top >= -window.innerHeight * 0.2 &&
+            bottom <= window.innerHeight * 1.2
         )
         .map(({ index }) => index);
 
