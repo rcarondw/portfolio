@@ -68,7 +68,7 @@ function App() {
         <Home />
       </div>
       <div className="w-full py-32  bg-opacity-60">
-        <hr className="w-1/4 border-2 border-slate-100 mx-auto" />
+        <hr className="w-1/4 border-2 border-gray-950 dark:border-slate-100 mx-auto" />
       </div>
       <div
         ref={(ref) => (divsRef.current[1] = ref)}
@@ -91,7 +91,7 @@ function App() {
         />
       </div>
       <div className="w-full py-32  bg-opacity-60">
-        <hr className="w-1/4 border-2 border-slate-100 mx-auto" />
+        <hr className="w-1/4 border-2 border-gray-950 dark:border-slate-100 mx-auto" />
       </div>
 
       <div
