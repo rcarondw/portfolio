@@ -24,13 +24,20 @@ html::-webkit-scrollbar-thumb {
   border-radius: 15px;
 }
 
-html::-webkit-scrollbar-track:hover {
-  cursor: pointer;
+html::-webkit-scrollbar-track {
+  opacity: 0;
 }
 
-.home {
+.bgDark {
   background-image: url("/home/rcarondw/portfolio/portfolio/src/assets/Accueil.jpg");
   background-repeat: no-repeat;
-  background-position: top;
   background-size: cover;
+  background-attachment: fixed;
+}
+
+.bgWhite {
+  background-image: url("/home/rcarondw/portfolio/portfolio/src/assets/AccueilW.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }

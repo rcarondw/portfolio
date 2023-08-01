@@ -1,0 +1,11 @@
+{
+  "welcome_to_react": "Welcome to React and react-i18next",
+
+  "thursday_resume": "Project completed during my master's with my team, where we had to develop a CRM, and we chose to create a Trello clone. Everything is fully functional, from ticket creation to modifications, column changes while maintaining the correct order, and deletion. Group and project creation, as well as everything related to profiles, all work seamlessly.",
+
+  "backSlot_resume": "This is a platform aimed at facilitating and centralizing the exchange of information between the agency and clients, making project progress more visible for both parties, and enabling faster and more precise communication regarding expectations and necessary modifications for project completion. It's the project I presented for my diploma, which earned me congratulations from the jury. I completed everything on my own, from gathering requirements to production, including the specification document and design.",
+
+  "details": "Details",
+
+  "summary": "Summary"
+}

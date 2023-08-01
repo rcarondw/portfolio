@@ -6,12 +6,14 @@ import image3 from "../../assets/MondayDark3.jpg";
 import image4 from "../../assets/MondayDark4.jpg";
 import image5 from "../../assets/MondayDark5.jpg";
 import { BsArrowLeftCircle } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 
-export default function Gallery({ divCount, visibleDivs }) {
+export default function Gallery({ divCount, visibleDivs, isEnglish }) {
   const [isActive, setisActive] = useState(false);
   const [imageFocused, setImageFocused] = useState();
   const [isFocus, setIsFocus] = useState(false);
   const galleryContainer = useRef();
+  const { t } = useTranslation();
 
   const itemsArray = [];
 
@@ -20,7 +22,7 @@ export default function Gallery({ divCount, visibleDivs }) {
       const newArray = Array.from(galleryContainer.current.childNodes);
       itemsArray.push(...newArray);
     }
-  }, [, isActive, divCount, visibleDivs]);
+  }, [, isActive, divCount, visibleDivs, isEnglish]);
 
   const galleryOnClickPrev = () => {
     itemsArray.forEach((el) => {
@@ -59,8 +61,8 @@ export default function Gallery({ divCount, visibleDivs }) {
   };
 
   return (
-    <div className="gallery h-screen select-none flex flex-col justify-evenly relative p-8">
-      <div className="h-1/2">
+    <div className="gallery h-screen select-none flex flex-col justify-evenly relative p-8 text-gray-950 dark:text-slate-100">
+      <div className="h-1/2 relative">
         <div ref={galleryContainer} className="gallery-container">
           <img
             src={image1}
@@ -98,39 +100,43 @@ export default function Gallery({ divCount, visibleDivs }) {
             data-index="5"
           />
         </div>
-        <div className="gallery-controls text-slate-100 mb-8">
+        <div className="gallery-controls mb-8">
           <BsArrowLeftCircle
             onClick={galleryOnClickPrev}
-            className="text-2xl cursor-pointer mx-4 button-prev hover:scale-110"
+            className="text-2xl cursor-pointer mx-4 button-prev hover:scale-110 absolute left-32 top-[50%]"
           />
           <BsArrowLeftCircle
             onClick={galleryOnClickNext}
-            className="rotate-180 text-2xl cursor-pointer mx-4 hover:scale-110"
+            className="rotate-180 text-2xl cursor-pointer mx-4 hover:scale-110 absolute right-32 top-[50%]"
           />
         </div>
       </div>
-      <div className="flex flex-col items-center justify-start w-2/3 h-1/2 mx-auto mt-16  text-slate-100">
-        <hr className="w-1/5 mx-auto my-8" />
-        <div className="w-full flex justify-around text-3xl font-extrabold">
+      <div className="flex flex-col items-center justify-start w-1/2 h-1/2 mx-auto mt-8 border-2 border-gray-400 dark:border-slate-100 rounded-md bg-white dark:bg-bgGray">
+        {/* <hr className="w-1/5 mx-auto my-8 border-gray-950 dark:border-slate-100" /> */}
+        <div className="w-full flex justify-around text-3xl font-extrabold ">
           <p
             onClick={() => setisActive(true)}
-            className={`  text-center italic p-4 cursor-pointer hover:border-b ${
-              isActive ? "border-b" : ""
+            className={`w-1/2 h-full  text-center italic p-4 cursor-pointer  ${
+              isActive
+                ? " border-gray-400 border-b dark:border-slate-100"
+                : "text-slate-200 dark:text-gray-700 "
             } `}
           >
-            Détails
+            {t("details")}
           </p>
           <p
             onClick={() => setisActive(false)}
-            className={`  text-center italic p-4 cursor-pointer hover:border-b ${
-              !isActive ? "border-b" : ""
+            className={`w-1/2 h-full  text-center italic p-4 cursor-pointer ${
+              !isActive
+                ? " border-gray-950 border-b dark:border-slate-100"
+                : "text-slate-200 dark:text-gray-700"
             } `}
           >
-            Résumé
+            {t("summary")}
           </p>
         </div>
         {isActive && (
-          <div className="w-full flex flex-col items-center leading-10 tracking-wide p-8">
+          <div className="w-full h-full flex flex-col items-center justify-center leading-10 tracking-wide p-8">
             <p>
               {" "}
               <span className="font-bold">Nom du projet:</span> Thursday
@@ -151,13 +157,8 @@ export default function Gallery({ divCount, visibleDivs }) {
           </div>
         )}
         {!isActive && (
-          <p className="w-full  text-center  p-8 leading-10 tracking-wide">
-            Projet réalisé durant mon master avec mon équipe, nous devions
-            développer un CRM et nous avons choisi de faire un clone de
-            "Trello". Tout est fonctionnel, de la création des tickets, leurs
-            modifications, les changements de colone en gardant le bon ordre et
-            la suppression. La création de groupe, de projet, tout ce qui touche
-            au profil, tout fonctionne.
+          <p className="w-full h-full flex justify-center items-center text-center font-semibold p-8 leading-10 tracking-wide">
+            {t("thursday_resume")}
           </p>
         )}
       </div>

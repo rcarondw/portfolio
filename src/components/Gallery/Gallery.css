@@ -62,12 +62,12 @@
   transform: translateX(-50%);
 }
 
-.gallery-controls {
+/* .gallery-controls {
   display: flex;
-  justify-content: center;
-  /* margin: 25px 0; */
+  justify-content: ;
+  margin: 25px 0;
   height: auto;
-}
+} */
 
 /* .gallery-controls button {
   background-color: transparent;
