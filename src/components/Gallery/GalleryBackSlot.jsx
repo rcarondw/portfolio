@@ -58,7 +58,7 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
 
   return (
     <div className="gallery h-screen flex flex-col justify-evenly select-none p-8 text-gray-950 dark:text-slate-100">
-      <div className="h-1/2">
+      <div className="h-1/2 relative">
         <div ref={galleryContainer} className="gallery-container">
           <img
             src={image1}
@@ -98,29 +98,33 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
         <div className="gallery-controls mb-8">
           <BsArrowLeftCircle
             onClick={galleryOnClickPrev}
-            className="text-2xl cursor-pointer mx-4 button-prev hover:scale-110"
+            className="text-2xl cursor-pointer mx-4 button-prev hover:scale-110 absolute left-32 top-[50%]"
           />
           <BsArrowLeftCircle
             onClick={galleryOnClickNext}
-            className="rotate-180 text-2xl cursor-pointer mx-4 hover:scale-110"
+            className="rotate-180 text-2xl cursor-pointer mx-4 hover:scale-110 absolute right-32 top-[50%]"
           />
         </div>
       </div>
-      <div className="flex flex-col items-center justify-start w-2/3 h-1/2 mx-auto mt-16 ">
-        <hr className="w-1/5 mx-auto my-8 border-gray-950 dark:border-slate-100" />
-        <div className="w-full flex justify-around text-3xl font-extrabold">
+      <div className="flex flex-col items-center justify-start w-1/2 h-1/2 mx-auto mt-8 border-2 border-gray-400 dark:border-slate-100 rounded-md bg-white dark:bg-bgGray">
+        {/* <hr className="w-1/5 mx-auto my-8 border-gray-950 dark:border-slate-100" /> */}
+        <div className="w-full flex justify-around text-3xl font-extrabold ">
           <p
             onClick={() => setisActive(true)}
-            className={`  text-center italic p-4 cursor-pointer hover:border-b border-gray-950 dark:border-slate-100  ${
-              isActive ? "border-b border-gray-950 dark:border-slate-100" : ""
+            className={`w-1/2 h-full  text-center italic p-4 cursor-pointer  ${
+              isActive
+                ? " border-gray-400 border-b dark:border-slate-100"
+                : "text-slate-200 dark:text-gray-700 "
             } `}
           >
             {t("details")}
           </p>
           <p
             onClick={() => setisActive(false)}
-            className={`  text-center italic p-4 cursor-pointer hover:border-b border-gray-950 dark:border-slate-100 ${
-              !isActive ? "border-b border-gray-950 dark:border-slate-100" : ""
+            className={`w-1/2 h-full  text-center italic p-4 cursor-pointer ${
+              !isActive
+                ? " border-gray-950 border-b dark:border-slate-100"
+                : "text-slate-200 dark:text-gray-700"
             } `}
           >
             {t("summary")}
