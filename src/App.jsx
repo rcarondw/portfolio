@@ -10,6 +10,7 @@ import { useTheme } from "./context/theme.context";
 function App() {
   const [divCount, setDivCount] = useState(0);
   const [isEnglish, setIsEnglish] = useState(true);
+  const [bgImage, setBgImage] = useState({});
   const { theme } = useTheme();
 
   console.log(theme);
@@ -53,8 +54,25 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (theme === "light") {
+      setBgImage({
+        backgroundImage: 'url("../public/assets/AccueilW.jpg")',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      });
+    } else {
+      setBgImage({
+        backgroundImage: 'url("../public/assets/Accueil.jpg")',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      });
+    }
+  }, [, theme]);
+
   return (
-    <div className={`${theme === "light" ? "bgWhite" : "bgDark"}`}>
+    // <div className={`${theme === "light" ? "bgWhite" : "bgDark"}`}>
+    <div className="bg-fixed" style={bgImage}>
       <ScrollArrows
         divCount={divCount}
         setDivCount={setDivCount}
