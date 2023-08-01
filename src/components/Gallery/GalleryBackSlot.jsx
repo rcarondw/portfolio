@@ -131,7 +131,7 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
           </p>
         </div>
         {isActive && (
-          <div className="w-full flex flex-col items-center text-lg leading-10 tracking-wide p-8 ">
+          <div className="w-full h-full flex flex-col items-center justify-center leading-10 tracking-wide p-8">
             <p>
               <span className="font-bold">Nom du projet :</span> Back Slot
             </p>
@@ -148,7 +148,7 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
           </div>
         )}
         {!isActive && (
-          <p className="w-full  text-center py-8 leading-10 tracking-wide ">
+          <p className="w-full h-full flex justify-center items-center text-center font-semibold p-8 leading-10 tracking-wide">
             {t("backSlot_resume")}
           </p>
         )}
