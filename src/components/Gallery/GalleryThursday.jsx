@@ -1,10 +1,10 @@
 import "./Gallery.css";
 import { useEffect, useRef, useState } from "react";
-import image1 from "../../assets/MondayDark1.jpg";
-import image2 from "../../assets/MondayDark2.jpg";
-import image3 from "../../assets/MondayDark3.jpg";
-import image4 from "../../assets/MondayDark4.jpg";
-import image5 from "../../assets/MondayDark5.jpg";
+import image1 from "../../../public/assets/MondayDark1.jpg";
+import image2 from "../../../public/assets/MondayDark2.jpg";
+import image3 from "../../../public/assets/MondayDark3.jpg";
+import image4 from "../../../public/assets/MondayDark4.jpg";
+import image5 from "../../../public/assets/MondayDark5.jpg";
 import { BsArrowLeftCircle } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 

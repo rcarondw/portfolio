@@ -29,14 +29,14 @@ html::-webkit-scrollbar-track {
 }
 
 .bgDark {
-  background-image: url("/home/rcarondw/portfolio/portfolio/src/assets/Accueil.jpg");
+  background-image: url("../public/assets/Accueil.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .bgWhite {
-  background-image: url("/home/rcarondw/portfolio/portfolio/src/assets/AccueilW.jpg");
+  background-image: url("../public/assets/AccueilW.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

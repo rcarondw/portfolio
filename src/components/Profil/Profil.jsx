@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import photo from "../../assets/photojungle.jpg";
-import CV from "../../assets/CV.jpg";
+import photo from "../../../public/assets/photojungle.jpg";
+import CV from "../../../public/assets/CV.jpg";
 import { FiMail } from "react-icons/fi";
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
