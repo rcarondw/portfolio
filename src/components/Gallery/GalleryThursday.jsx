@@ -1,12 +1,13 @@
 import "./Gallery.css";
 import { useEffect, useRef, useState } from "react";
-import image1 from "../../../public/assets/MondayDark1.jpg";
-import image2 from "../../../public/assets/MondayDark2.jpg";
-import image3 from "../../../public/assets/MondayDark3.jpg";
-import image4 from "../../../public/assets/MondayDark4.jpg";
-import image5 from "../../../public/assets/MondayDark5.jpg";
+import image1 from "../../assets/MondayDark1.jpg";
+import image2 from "../../assets/MondayDark2.jpg";
+import image3 from "../../assets/MondayDark3.jpg";
+import image4 from "../../assets/MondayDark4.jpg";
+import image5 from "../../assets/MondayDark5.jpg";
 import { BsArrowLeftCircle } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../../context/theme.context";
 
 export default function Gallery({ divCount, visibleDivs, isEnglish }) {
   const [isActive, setisActive] = useState(false);
@@ -14,6 +15,7 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
   const [isFocus, setIsFocus] = useState(false);
   const galleryContainer = useRef();
   const { t } = useTranslation();
+  const { theme } = useTheme();
 
   const itemsArray = [];
 
@@ -111,15 +113,18 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
           />
         </div>
       </div>
-      <div className="flex flex-col items-center justify-start w-1/2 h-1/2 mx-auto mt-8 border-2 border-gray-400 dark:border-slate-100 rounded-md bg-white dark:bg-bgGray">
+      <div className="flex flex-col items-center justify-start w-1/2 h-1/2 mx-auto mt-8 dark:border-2 dark:border-slate-100 rounded-md bg-slate-100 dark:bg-bgGray shadow-lg">
         {/* <hr className="w-1/5 mx-auto my-8 border-gray-950 dark:border-slate-100" /> */}
-        <div className="w-full flex justify-around text-3xl font-extrabold ">
+        <div className="w-full flex justify-around text-3xl font-extrabold  border-slate-100">
           <p
             onClick={() => setisActive(true)}
             className={`w-1/2 h-full  text-center italic p-4 cursor-pointer  ${
               isActive
-                ? " border-gray-400 border-b dark:border-slate-100"
-                : "text-slate-200 dark:text-gray-700 "
+                ? " underline"
+                : ` dark:text-gray-400 ${
+                    theme === "light" ? " tabBoxW" : "tabBox"
+                  }`
+            }
             } `}
           >
             {t("details")}
@@ -128,15 +133,18 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
             onClick={() => setisActive(false)}
             className={`w-1/2 h-full  text-center italic p-4 cursor-pointer ${
               !isActive
-                ? " border-gray-950 border-b dark:border-slate-100"
-                : "text-slate-200 dark:text-gray-700"
-            } `}
+                ? "underline "
+                : ` dark:text-gray-400 ${
+                    theme === "light" ? " tabBoxW" : "tabBox"
+                  }`
+            }
+        } `}
           >
             {t("summary")}
           </p>
         </div>
         {isActive && (
-          <div className="w-full h-full flex flex-col items-center justify-center leading-10 tracking-wide p-8">
+          <div className="w-full h-full flex flex-col items-center justify-center leading-10 tracking-wide p-8 tabBoxW">
             <p>
               {" "}
               <span className="font-bold">Nom du projet:</span> Thursday
@@ -157,7 +165,7 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
           </div>
         )}
         {!isActive && (
-          <p className="w-full h-full flex justify-center items-center text-center font-semibold p-8 leading-10 tracking-wide">
+          <p className="w-full h-full flex justify-center items-center text-center font-semibold p-8 leading-10 tracking-wide tabBoxW">
             {t("thursday_resume")}
           </p>
         )}

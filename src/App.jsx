@@ -57,13 +57,14 @@ function App() {
   useEffect(() => {
     if (theme === "light") {
       setBgImage({
-        backgroundImage: 'url("../public/assets/AccueilW.jpg")',
+        backgroundImage: 'url("/assets/bgAll.jpg")',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       });
     } else {
       setBgImage({
-        backgroundImage: 'url("../public/assets/Accueil.jpg")',
+        // backgroundImage: 'url("../public/assets/Accueil.jpg")',
+        backgroundImage: 'url("/assets/bgAll.jpg")',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       });
@@ -71,7 +72,6 @@ function App() {
   }, [, theme]);
 
   return (
-    // <div className={`${theme === "light" ? "bgWhite" : "bgDark"}`}>
     <div className="bg-fixed" style={bgImage}>
       <ScrollArrows
         divCount={divCount}
@@ -81,7 +81,7 @@ function App() {
       />
       <div
         ref={(ref) => (divsRef.current[0] = ref)}
-        className=" box box-0 bg-white dark:bg-black dark:bg-opacity-90 bg-opacity-80"
+        className=" box box-0 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80"
       >
         <Home />
       </div>
@@ -90,7 +90,7 @@ function App() {
       </div>
       <div
         ref={(ref) => (divsRef.current[1] = ref)}
-        className="box box-1 bg-white dark:bg-black dark:bg-opacity-90 bg-opacity-80"
+        className="box box-1 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80"
       >
         <Profil />
       </div>
@@ -100,7 +100,7 @@ function App() {
 
       <div
         ref={(ref) => (divsRef.current[2] = ref)}
-        className="box box-2 bg-white dark:bg-black dark:bg-opacity-90 bg-opacity-80"
+        className="box box-2 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80"
       >
         <GalleryBackSlot
           divCount={divCount}
@@ -114,7 +114,7 @@ function App() {
 
       <div
         ref={(ref) => (divsRef.current[3] = ref)}
-        className="box box-3 bg-white dark:bg-black dark:bg-opacity-90 bg-opacity-80"
+        className="box box-3 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80"
       >
         <GalleryThursday
           divCount={divCount}

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import photo from "../../../public/assets/photojungle.jpg";
-import CV from "../../../public/assets/CV.jpg";
+import React, { useEffect, useState } from "react";
+import photo from "../../assets/photojungle.jpg";
+import CV from "../../assets/CV.jpg";
 import { FiMail } from "react-icons/fi";
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
@@ -8,7 +8,7 @@ import { AiOutlineFileSearch } from "react-icons/ai";
 
 export default function Profil() {
   const [isActive, setIsActive] = useState(false);
-  console.log(typeof document.cookie);
+
   return (
     <div className="h-screen w-full flex p-8 relative text-gray-950 dark:text-slate-100">
       <div className="w-1/3 h-full flex flex-col border-t-2 border-l-2 border-bgGray dark:border-slate-100 rounded-l-md rounded-b-none relative">

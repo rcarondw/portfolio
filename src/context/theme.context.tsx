@@ -18,7 +18,7 @@ interface IThemeContext {
 const ThemeContext = createContext<IThemeContext | null>(null);
 
 export const ThemeProvider = (props: Props) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     const root = window.document.documentElement;

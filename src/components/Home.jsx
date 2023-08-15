@@ -1,4 +1,9 @@
 import React from "react";
+import { PlanetModel } from "../components/Models/Planet";
+import { Canvas } from "@react-three/fiber";
+import { Box, OrbitControls, Sphere } from "@react-three/drei";
+import { LightPlanetModel } from "./Models/LightPlanet";
+import { DirectionalLight } from "three";
 
 export default function Home() {
   return (
@@ -15,7 +20,17 @@ export default function Home() {
           </span>
         </h1>
       </div>
-      <div className="w-1/2 "></div>
+      <div className="w-1/2 h-full">
+        <Canvas>
+          {/* <OrbitControls /> */}
+          <ambientLight intensity={0.4} />
+          <pointLight position={[180, -30, 50]} intensity={1} />
+          <pointLight position={[180, -50, 0]} intensity={1} />
+          <pointLight position={[180, -180, -50]} intensity={1} />
+          {/* <PlanetModel /> */}
+          <LightPlanetModel />
+        </Canvas>
+      </div>
     </div>
   );
 }

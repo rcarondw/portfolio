@@ -1,10 +1,10 @@
 import "./Gallery.css";
 import { useEffect, useRef, useState } from "react";
-import image1 from "../../../public/assets/projetPd1.jpg";
-import image2 from "../../../public/assets/projetPd2.jpg";
-import image3 from "../../../public/assets/projetPd3.jpg";
-import image4 from "../../../public/assets/projetPd4.jpg";
-import image5 from "../../../public/assets/projetPd5.jpg";
+import image1 from "../../assets/projetPd1.jpg";
+import image2 from "../../assets/projetPd2.jpg";
+import image3 from "../../assets/projetPd3.jpg";
+import image4 from "../../assets/projetPd4.jpg";
+import image5 from "../../assets/projetPd5.jpg";
 import { BsArrowLeftCircle } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/theme.context";
