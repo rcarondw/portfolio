@@ -9,7 +9,7 @@ import { useTheme } from "./context/theme.context";
 
 function App() {
   const [divCount, setDivCount] = useState(0);
-  const [isEnglish, setIsEnglish] = useState(true);
+  const [isEnglish, setIsEnglish] = useState(false);
   const [bgImage, setBgImage] = useState({});
   const { theme } = useTheme();
 
