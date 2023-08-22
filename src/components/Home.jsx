@@ -9,12 +9,32 @@ export default function Home() {
   return (
     <div className="w-full h-screen flex justify-center items-center text-gray-950 dark:text-slate-100 select-none">
       <div className="w-1/2 flex justify-center items-center">
-        <h1 className="w-2/3 text-9xl font-extrabold flex flex-col justify-evenly px-16 italic">
-          <span className=" self-end">- PORT</span>
+        <h1 className="w-2/3 text-[130px] font-extrabold flex flex-col justify-evenly px-16 italic ">
+          <div className=" flex justify-center items-center relative">
+            <span className="visible-none self-end">- PORT</span>
+            <span className="absolute opacity-80 glitchedAnim self-end">
+              - PORT
+            </span>
+            <span className="absolute opacity-80 glitchedAnim self-end">
+              - PORT
+            </span>
+            <span className="absolute opacity-80 glitchedAnim self-end">
+              - PORT
+            </span>
+          </div>
           <hr className="mt-4 border-gray-950 dark:border-slate-100" />
-          <span className="border-t-4 border-gray-950 dark:border-slate-100">
-            FOLIO -
-          </span>
+          <div className=" flex justify-center items-center relative">
+            <span className="visible-none self-end">FOLIO -</span>
+            <span className="absolute opacity-80 glitchedAnim2 self-end">
+              FOLIO -
+            </span>
+            <span className="absolute opacity-80 glitchedAnim2 self-end">
+              FOLIO -
+            </span>
+            <span className="absolute opacity-80 glitchedAnim2 self-end">
+              FOLIO -
+            </span>
+          </div>
           <span className="text-sm text-center mt-2 font-semibold">
             "work in progress"
           </span>

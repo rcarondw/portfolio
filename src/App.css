@@ -13,10 +13,15 @@ body {
 
 html {
   scrollbar-width: normal;
+  scroll-snap-type: y proximity;
 }
 
 html::-webkit-scrollbar {
   width: 1vh;
+}
+
+section {
+  scroll-snap-align: start;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -40,4 +45,255 @@ html::-webkit-scrollbar-track {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.glitchedAnim:nth-child(2) {
+  color: #f03e3e;
+  animation: skewAnim 3s infinite;
+}
+.glitchedAnim:nth-child(3) {
+  color: #3df0cf;
+  animation: glitchAnim2 3s infinite;
+}
+.glitchedAnim:nth-child(4) {
+  color: #f1f1f1;
+  animation: glitchAnim1 3s infinite;
+}
+
+@keyframes glitchAnim1 {
+  7% {
+    transform: none;
+  }
+  10% {
+    transform: translate(4px, -2px);
+  }
+  13% {
+    transform: none;
+  }
+  20% {
+    transform: none;
+  }
+  23% {
+    transform: translate(-8px, -5px);
+  }
+  26% {
+    transform: none;
+  }
+  40% {
+    transform: none;
+  }
+  43% {
+    transform: translate(4px, -3px);
+  }
+  46% {
+    transform: none;
+  }
+  65% {
+    transform: none;
+  }
+  68% {
+    transform: translate(5px, 3px);
+  }
+  71% {
+    transform: none;
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes glitchAnim2 {
+  7% {
+    transform: none;
+  }
+  10% {
+    transform: translate(-4px, 2px);
+  }
+  13% {
+    transform: none;
+  }
+  20% {
+    transform: none;
+  }
+  23% {
+    transform: translate(8px, 5px);
+  }
+  26% {
+    transform: none;
+  }
+  40% {
+    transform: none;
+  }
+  43% {
+    transform: translate(-7px, 6px);
+  }
+  46% {
+    transform: none;
+  }
+  65% {
+    transform: none;
+  }
+  68% {
+    transform: translate(-5px, 3x);
+  }
+  71% {
+    transform: none;
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes skewAnim {
+  20% {
+    transform: none;
+  }
+  23% {
+    transform: skew(2deg, -2deg) translate(7px, 3px);
+  }
+  26% {
+    transform: none;
+  }
+  40% {
+    transform: none;
+  }
+  43% {
+    transform: skew(5deg, -5deg) translate(-5px, 2px);
+  }
+  46% {
+    transform: none;
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.glitchedAnim2:nth-child(2) {
+  color: #f03e3e;
+  animation: skewAnim-2 3s infinite;
+}
+.glitchedAnim2:nth-child(3) {
+  color: #3df0cf;
+  animation: glitchAnim2-2 3s infinite;
+}
+.glitchedAnim2:nth-child(4) {
+  color: #f1f1f1;
+  animation: glitchAnim2-1 3s infinite;
+}
+
+@keyframes glitchAnim2-1 {
+  7% {
+    transform: none;
+  }
+  10% {
+    transform: none;
+  }
+  13% {
+    transform: none;
+  }
+  16% {
+    transform: translate(4px, -2px);
+  }
+  23% {
+    transform: none;
+  }
+  32% {
+    transform: translate(-8px, -5px);
+  }
+  35% {
+    transform: none;
+  }
+  43% {
+    transform: translate(4px, -3px);
+  }
+  46% {
+    transform: none;
+  }
+  57% {
+    transform: translate(5px, 3px);
+  }
+  59% {
+    transform: none;
+  }
+  71% {
+    transform: none;
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes glitchAnim2-2 {
+  8% {
+    transform: none;
+  }
+  10% {
+    transform: translate(-4px, 2px);
+  }
+  13% {
+    transform: none;
+  }
+  20% {
+    transform: none;
+  }
+  23% {
+    transform: translate(8px, 5px);
+  }
+  25% {
+    transform: none;
+  }
+  28% {
+    transform: translate(-7px, 6px);
+  }
+  43% {
+    transform: none;
+  }
+  44% {
+    transform: none;
+  }
+  45% {
+    transform: translate(-5px, 3x);
+  }
+  50% {
+    transform: none;
+  }
+  70% {
+    transform: translate(-55px, 38x);
+  }
+  72% {
+    transform: none;
+  }
+  88% {
+    transform: translate(-7px, 2x);
+  }
+  90% {
+    transform: none;
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes skewAnim-2 {
+  20% {
+    transform: none;
+  }
+  32% {
+    transform: skew(2deg, -2deg) translate(7px, 3px);
+  }
+  34% {
+    transform: none;
+  }
+  40% {
+    transform: none;
+  }
+  52% {
+    transform: skew(5deg, -5deg) translate(-5px, 2px);
+  }
+  53% {
+    transform: none;
+  }
+  100% {
+    transform: none;
+  }
 }

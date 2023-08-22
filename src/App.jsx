@@ -79,26 +79,26 @@ function App() {
         isEnglish={isEnglish}
         setIsEnglish={setIsEnglish}
       />
-      <div
+      <section
         ref={(ref) => (divsRef.current[0] = ref)}
         className=" box box-0 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80"
       >
         <Home />
-      </div>
+      </section>
       <div className="w-full py-32  bg-opacity-60">
         <hr className="w-1/4 border-2 border-gray-950 dark:border-slate-100 mx-auto" />
       </div>
-      <div
+      <section
         ref={(ref) => (divsRef.current[1] = ref)}
         className="box box-1 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80"
       >
         <Profil />
-      </div>
+      </section>
       <div className="w-full py-32  bg-opacity-60">
         <hr className="w-1/4 border-2 border-gray-950 dark:border-slate-100 mx-auto" />
       </div>
 
-      <div
+      <section
         ref={(ref) => (divsRef.current[2] = ref)}
         className="box box-2 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80"
       >
@@ -107,12 +107,12 @@ function App() {
           visibleDivs={visibleDivs}
           isEnglish={isEnglish}
         />
-      </div>
+      </section>
       <div className="w-full py-32  bg-opacity-60">
         <hr className="w-1/4 border-2 border-gray-950 dark:border-slate-100 mx-auto" />
       </div>
 
-      <div
+      <section
         ref={(ref) => (divsRef.current[3] = ref)}
         className="box box-3 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80"
       >
@@ -121,7 +121,7 @@ function App() {
           visibleDivs={visibleDivs}
           isEnglish={isEnglish}
         />
-      </div>
+      </section>
     </div>
   );
 }
