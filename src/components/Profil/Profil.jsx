@@ -69,8 +69,9 @@ export default function Profil() {
             je maîtrise désormais toutes les subtilités. En ce qui concerne le
             back-end, j'ai travaillé avec
             <span className="font-extrabold"> Node/Express</span> en utilisant{" "}
-            <span className="font-extrabold">Prisma</span> avec GraphQL, et bien
-            sûr, j'ai réalisé tous ces projets avec{" "}
+            <span className="font-extrabold">Prisma</span> avec{" "}
+            <span className="font-extrabold">GraphQL</span>, et bien sûr, j'ai
+            réalisé tous ces projets avec{" "}
             <span className="font-extrabold">TypeScript</span> pour une
             meilleure sécurité et efficacité. J'ai également eu l'occasion de
             coder des projets en <span className="font-extrabold">Next.js</span>
