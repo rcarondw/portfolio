@@ -7,7 +7,6 @@ export function LightPlanetModel(props) {
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
-    console.log(actions);
     actions[`SphereAction.002`].play();
     actions[`TextAction.003`].play();
   }, []);
