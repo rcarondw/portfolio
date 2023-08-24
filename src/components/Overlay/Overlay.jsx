@@ -53,10 +53,6 @@ export default function Overlay({
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  useEffect(() => {
-    console.log(isOpen);
-  }, [isOpen]);
-
   const handleMenu = (div) => {
     setDivCount(div);
     setIsOpen(false);
@@ -65,7 +61,7 @@ export default function Overlay({
   return (
     <div className=" w-10 h-screen right-8 fixed z-50 flex flex-col justify-between items-center  text-gray-950 dark:text-slate-100">
       {isOpen && (
-        <div className="w-2/3 h-screen bg-black fixed bg-opacity-90 flex flex-col justify-evenly text-8xl font-extrabold p-6 italic">
+        <div className="w-2/3 h-screen dark:bg-black bg-slate-100 fixed bg-opacity-90 flex flex-col justify-evenly text-8xl font-extrabold p-6 italic z-40">
           <li
             onClick={() => {
               handleMenu(0);
@@ -119,10 +115,15 @@ export default function Overlay({
           </span>
         )}
         <div
-          className={`menu-btn ${isOpen ? "open" : ""}`}
+          className={`menu-btn  z-50 ${isOpen ? "open" : ""}`}
           onClick={(e) => setIsOpen(!isOpen)}
         >
-          <div className="menu-btn__burger " />
+          {/* "menu-btn__burger dark:menu-btn__burger " */}
+          <div
+            className={`${
+              theme === "dark" ? "menu-btn__burger_dark" : "menu-btn__burger"
+            }`}
+          />
         </div>
       </div>
       <div className="h-full flex flex-col justify-center items-center gap-2 ">
@@ -177,7 +178,7 @@ export default function Overlay({
         )}
         <BsArrowUpCircle
           onClick={handleScrollNext}
-          className={`rotate-180 text-4xl  cursor-pointer  ${
+          className={`rotate-180 text-4xl  cursor-pointer ${
             stopNext ? "text-slate-600" : " hover:scale-110"
           }`}
         />
