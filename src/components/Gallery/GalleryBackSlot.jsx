@@ -18,7 +18,6 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
   const itemsArray = [];
 
   useEffect(() => {
-    console.log(theme);
     if (itemsArray.length == 0) {
       const newArray = Array.from(galleryContainer.current.childNodes);
       itemsArray.push(...newArray);

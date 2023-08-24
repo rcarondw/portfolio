@@ -40,7 +40,7 @@ export default function Home() {
           </span>
         </h1>
       </div>
-      <div className="w-1/2 h-full planet">
+      <div className="w-1/2 h-full planet hidden">
         <Canvas>
           {/* <OrbitControls /> */}
           <ambientLight intensity={0.4} />

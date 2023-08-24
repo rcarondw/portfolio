@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import photo from "../../assets/photojungle.jpg";
+import photo from "../../assets/photojungle.webp";
 import CV from "../../assets/CV.jpg";
 import { FiMail } from "react-icons/fi";
 import { AiFillLinkedin } from "react-icons/ai";
@@ -49,7 +49,7 @@ export default function Profil() {
         </div>
       </div>
 
-      <div className="h-full w-2/3 flex flex-col items-center justify-around px-32 py-16">
+      <div className="h-full w-2/3 lg:flex flex-col items-center justify-around px-32 py-16 hidden">
         {/* <h2 className=" self-start text-3xl font-bold">Présentation :</h2> */}
         {document.cookie === "i18next=fr" ? (
           <p className="text-justify leading-10 tracking-wide ">

@@ -13,8 +13,6 @@ function App() {
   const [bgImage, setBgImage] = useState({});
   const { theme } = useTheme();
 
-  console.log(theme);
-
   useEffect(() => {
     const targetElement = document.querySelector(`.box-${divCount}`);
     if (targetElement) {

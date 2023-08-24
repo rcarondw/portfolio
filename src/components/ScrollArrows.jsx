@@ -47,7 +47,6 @@ export default function ScrollArrows({
       setIsEnglish(false);
     } else setIsEnglish(true);
     i18next.changeLanguage(props);
-    console.log(props);
   };
 
   const handleDarkMode = () => {
