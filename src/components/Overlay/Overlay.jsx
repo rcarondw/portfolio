@@ -1,13 +1,12 @@
-import i18next from "i18next";
+import i18next, { use } from "i18next";
 import { useEffect, useState } from "react";
 import { BsArrowUpCircle } from "react-icons/bs";
-import { MdOutlineDarkMode } from "react-icons/md";
-// import { CiDark } from "react-icons/ci";
-import { useTheme } from "../context/theme.context";
+import { useTheme } from "../../context/theme.context";
 import { BsFillSunFill } from "react-icons/bs";
 import { BsMoonFill } from "react-icons/bs";
+import "./Overlay.css";
 
-export default function ScrollArrows({
+export default function Overlay({
   divCount,
   setDivCount,
   isEnglish,
@@ -15,6 +14,7 @@ export default function ScrollArrows({
 }) {
   const [stopPrev, setStopPrev] = useState(false);
   const [stopNext, setStopNext] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -53,9 +53,50 @@ export default function ScrollArrows({
     setTheme(theme === "light" ? "dark" : "light");
   };
 
+  useEffect(() => {
+    console.log(isOpen);
+  }, [isOpen]);
+
+  const handleMenu = (div) => {
+    setDivCount(div);
+    setIsOpen(false);
+  };
+
   return (
-    <div className=" w-10 h-screen right-8 fixed z-50 flex flex-col justify-between items-center py-8 text-gray-950 dark:text-slate-100">
-      <div className="flex flex-col items-center gap-6">
+    <div className=" w-10 h-screen right-8 fixed z-50 flex flex-col justify-between items-center  text-gray-950 dark:text-slate-100">
+      {isOpen && (
+        <div className="w-2/3 h-screen bg-black fixed bg-opacity-90 flex flex-col justify-evenly text-8xl font-extrabold p-6 italic">
+          <li
+            onClick={() => {
+              handleMenu(0);
+            }}
+          >
+            HOME
+          </li>
+          <li
+            onClick={() => {
+              handleMenu(1);
+            }}
+          >
+            PROFIL
+          </li>
+          <li
+            onClick={() => {
+              handleMenu(2);
+            }}
+          >
+            BACKSLOT
+          </li>
+          <li
+            onClick={() => {
+              handleMenu(3);
+            }}
+          >
+            THURSDAY
+          </li>
+        </div>
+      )}
+      <div className="flex flex-col items-center gap-6 pt-8">
         <BsArrowUpCircle
           onClick={handleScrollPrev}
           className={`  text-4xl cursor-pointer  ${
@@ -77,6 +118,12 @@ export default function ScrollArrows({
             Fr
           </span>
         )}
+        <div
+          className={`menu-btn ${isOpen ? "open" : ""}`}
+          onClick={(e) => setIsOpen(!isOpen)}
+        >
+          <div className="menu-btn__burger " />
+        </div>
       </div>
       <div className="h-full flex flex-col justify-center items-center gap-2 ">
         <span
@@ -112,7 +159,7 @@ export default function ScrollArrows({
           }`}
         ></span>
       </div>
-      <div className="flex flex-col items-center gap-6">
+      <div className="flex flex-col items-center gap-6 pb-8">
         {theme === "light" ? (
           // <CiDark
           //   className="text-2xl cursor-pointer"

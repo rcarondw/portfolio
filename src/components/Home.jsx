@@ -8,8 +8,8 @@ import { DirectionalLight } from "three";
 export default function Home() {
   return (
     <div className="w-full h-screen flex justify-center items-center text-gray-950 dark:text-slate-100 select-none">
-      <div className="w-1/2 flex justify-center items-center">
-        <h1 className="w-2/3 text-[130px] font-extrabold flex flex-col justify-evenly px-16 italic ">
+      <div className="lg:w-1/2 flex justify-center items-center">
+        <h1 className="lg:w-2/3 lg:text-[130px] text-8xl font-extrabold flex flex-col justify-evenly px-16 italic">
           <div className=" flex justify-center items-center relative">
             <span className="visible-none self-end">- PORT</span>
             <span className="absolute opacity-80 glitchedAnim self-end">

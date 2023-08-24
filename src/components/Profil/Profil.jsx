@@ -11,14 +11,14 @@ export default function Profil() {
 
   return (
     <div className="h-screen w-full flex p-8 relative text-gray-950 dark:text-slate-100">
-      <div className="w-1/3 h-full flex flex-col border-t-2 border-l-2 border-bgGray dark:border-slate-100 rounded-l-md rounded-b-none relative">
-        <div className=" h-[80vh] w-3/4 m-16  rounded-md">
+      <div className="lg:w-1/3 h-full hidden lg:flex flex-col border-t-2 border-l-2 border-bgGray dark:border-slate-100 rounded-l-md rounded-b-none relative">
+        <div className=" h-[80vh] lg:w-3/4 w-full lg:m-16 rounded-md">
           <img
             src={photo}
             alt="photo-de-profile"
             className="h-full w-full object-cover object-top rounded-md "
           />
-          <div className="absolute bottom-0 right-0 w-2/4 h-[40%] flex flex-col justify-evenly bg-slate-100 dark:bg-black rounded-md dark:bg-opacity-90 dark:border-slate-100 border-r-2 border-b-2 p-8 text-lg leading-10 shadow-lg">
+          <div className="absolute bottom-0 right-0 w-2/4 h-[40%] hidden lg:flex flex-col justify-evenly bg-slate-100 dark:bg-black rounded-md dark:bg-opacity-90 dark:border-slate-100 border-r-2 border-b-2 p-8 text-lg leading-10 shadow-lg">
             <h2 className="font-bold text-2xl mb-4">CONTACT :</h2>
             <div className="flex items-center">
               <FiMail className="mr-2" />

@@ -3,7 +3,7 @@ import "./App.css";
 import GalleryBackSlot from "./components/Gallery/GalleryBackSlot";
 import GalleryThursday from "./components/Gallery/GalleryThursday";
 import Profil from "./components/Profil/Profil";
-import ScrollArrows from "./components/ScrollArrows";
+import Overlay from "./components/Overlay/Overlay";
 import Home from "./components/Home";
 import { useTheme } from "./context/theme.context";
 
@@ -70,8 +70,8 @@ function App() {
   }, [, theme]);
 
   return (
-    <div className="bg-fixed" style={bgImage}>
-      <ScrollArrows
+    <div className="bg-fixed " style={bgImage}>
+      <Overlay
         divCount={divCount}
         setDivCount={setDivCount}
         isEnglish={isEnglish}
@@ -79,7 +79,7 @@ function App() {
       />
       <section
         ref={(ref) => (divsRef.current[0] = ref)}
-        className=" box box-0 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80"
+        className=" box box-0 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80 "
       >
         <Home />
       </section>
