@@ -22,7 +22,6 @@ export default function Home() {
               - PORT
             </span>
           </div>
-          <hr className="mt-4 border-gray-950 dark:border-slate-100" />
           <div className=" flex justify-center items-center relative">
             <span className="visible-none self-end">FOLIO -</span>
             <span className="absolute opacity-80 glitchedAnim2 self-end">

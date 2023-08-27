@@ -14,7 +14,9 @@
 
 .gallery-item {
   height: 200px;
+  /* height: clamp(100px, 45vh, 200px); */
   width: 380px;
+  /* width: clamp(160, 50vw, 380px); */
   opacity: 0;
   position: absolute;
   transition: all 0.3s ease-in-out;
@@ -30,8 +32,10 @@
 
 .gallery-item-2,
 .gallery-item-4 {
-  height: 250px;
-  width: 480px;
+  /* height: 250px; */
+  height: clamp(125px, 35vh, 250px);
+  /* width: 480px; */
+  width: clamp(240px, 45vw, 480px);
   opacity: 1;
   z-index: 1;
 }
@@ -43,8 +47,10 @@
 
 .gallery-item-3 {
   box-shadow: -2px 5px 33px 6px rgba(0, 0, 0, 0.35);
-  height: 380px;
-  width: 730px;
+  /* height: 380px; */
+  height: clamp(160px, 40vh, 380px);
+  /* width: 730px; */
+  width: clamp(365px, 50vw, 730px);
   opacity: 1;
   left: 50%;
   transform: translateX(-50%);

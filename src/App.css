@@ -11,14 +11,23 @@ body {
   background: black;
 }
 
+.modal {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .fSmall {
+  font-size: clamp(16px, 1vw, 24px);
 }
 
 .fMedium {
+  font-size: clamp(50px, 6vw, 100px);
 }
 
 .fLarge {
-  font-size: clamp(50px, 6vw, 100px);
+  font-size: clamp(80px, 8vw, 140px);
 }
 
 html {

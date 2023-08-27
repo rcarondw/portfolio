@@ -1,10 +1,11 @@
 import i18next, { use } from "i18next";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BsArrowUpCircle } from "react-icons/bs";
 import { useTheme } from "../../context/theme.context";
 import { BsFillSunFill } from "react-icons/bs";
 import { BsMoonFill } from "react-icons/bs";
 import "./Overlay.css";
+import useClickOutside from "../../Hooks/useClickOutside";
 
 export default function Overlay({
   divCount,
@@ -16,6 +17,16 @@ export default function Overlay({
   const [stopNext, setStopNext] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  ///useClickoutside///
+  const menu = useRef(null);
+
+  const clickOutSideHandler = () => {
+    setIsOpen(false);
+  };
+
+  useClickOutside(menu, clickOutSideHandler);
+  ///useClickOutSide///
 
   useEffect(() => {
     if (divCount === 0) {
@@ -58,10 +69,15 @@ export default function Overlay({
     setIsOpen(false);
   };
 
+  console.log(isOpen);
+
   return (
     <div className=" w-10 h-screen right-8 fixed z-50 flex flex-col justify-between items-center  text-gray-950 dark:text-slate-100">
       {isOpen && (
-        <div className="w-2/3 h-screen dark:bg-black bg-slate-100 fixed bg-opacity-90 flex flex-col justify-evenly fLarge font-extrabold p-6 italic z-40">
+        <div
+          ref={menu}
+          className="w-2/3 h-screen dark:bg-black bg-slate-100 fixed bg-opacity-90 flex flex-col justify-evenly fMedium font-extrabold p-6 italic z-40"
+        >
           <li
             onClick={() => {
               handleMenu(0);
@@ -118,7 +134,6 @@ export default function Overlay({
           className={`menu-btn  z-50 ${isOpen ? "open" : ""}`}
           onClick={(e) => setIsOpen(!isOpen)}
         >
-          {/* "menu-btn__burger dark:menu-btn__burger " */}
           <div
             className={`${
               theme === "dark" ? "menu-btn__burger_dark" : "menu-btn__burger"

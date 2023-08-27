@@ -105,8 +105,7 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
           />
         </div>
       </div>
-      <div className="flex flex-col items-center justify-start w-1/2 h-1/2 mx-auto mt-8 border-2 border-gray-400 dark:border-slate-100 rounded-md bg-white dark:bg-bgGray">
-        {/* <hr className="w-1/5 mx-auto my-8 border-gray-950 dark:border-slate-100" /> */}
+      {/* <div className="flex flex-col items-center justify-start w-1/2 h-1/2 mx-auto mt-8 border-2 border-gray-400 dark:border-slate-100 rounded-md bg-white dark:bg-bgGray">
         <div className="w-full flex justify-around text-3xl font-extrabold ">
           <p
             onClick={() => setisActive(true)}
@@ -151,7 +150,7 @@ export default function Gallery({ divCount, visibleDivs, isEnglish }) {
             {t("backSlot_resume")}
           </p>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -12,6 +12,7 @@ function App() {
   const [isEnglish, setIsEnglish] = useState(false);
   const [bgImage, setBgImage] = useState({});
   const { theme } = useTheme();
+  const [isCopy, setIsCopy] = useState(false);
 
   useEffect(() => {
     const targetElement = document.querySelector(`.box-${divCount}`);
@@ -90,7 +91,7 @@ function App() {
         ref={(ref) => (divsRef.current[1] = ref)}
         className="box box-1 bg-white dark:bg-bgGray dark:bg-opacity-90 bg-opacity-80"
       >
-        <Profil />
+        <Profil setIsCopy={setIsCopy} />
       </section>
       <div className="w-full py-32  bg-opacity-60">
         <hr className="w-1/4 border-2 border-gray-950 dark:border-slate-100 mx-auto" />
@@ -120,6 +121,11 @@ function App() {
           isEnglish={isEnglish}
         />
       </section>
+      {isCopy && (
+        <div className="fSmall border modal text-center mx-auto rounded-md bg-bgGray text-slate-100">
+          <p className="p-6">L'adresse a bien été copiée ! ✔️</p>
+        </div>
+      )}
     </div>
   );
 }

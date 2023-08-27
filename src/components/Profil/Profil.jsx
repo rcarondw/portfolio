@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import photo from "../../assets/photojungle.webp";
 import CV from "../../assets/CV.jpg";
 import { FiMail } from "react-icons/fi";
@@ -6,37 +7,56 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import { AiOutlineFileSearch } from "react-icons/ai";
 
-export default function Profil() {
+export default function Profil({ setIsCopy }) {
   const [isActive, setIsActive] = useState(false);
+
+  const handleCopy = () => {
+    setIsCopy(true);
+    setTimeout(() => {
+      setIsCopy(false);
+    }, 3000);
+  };
 
   return (
     <div className="h-screen w-full flex p-8 relative text-gray-950 dark:text-slate-100">
-      <div className="lg:w-1/3 h-full hidden lg:flex flex-col border-t-2 border-l-2 border-bgGray dark:border-slate-100 rounded-l-md rounded-b-none relative">
+      <div className="w-1/3 h-full  lg:flex flex-col border-t-2 border-l-2 border-bgGray dark:border-slate-100 rounded-l-md rounded-b-none relative">
         <div className=" h-[80vh] lg:w-3/4 w-full lg:m-16 rounded-md">
           <img
             src={photo}
             alt="photo-de-profile"
-            className="h-full w-full object-cover object-top rounded-md "
+            className="h-full w-full object-cover object-top rounded-md select-none"
           />
-          <div className="absolute bottom-0 right-0 w-2/4 h-[40%] hidden lg:flex flex-col justify-evenly bg-slate-100 dark:bg-black rounded-md dark:bg-opacity-90 dark:border-slate-100 border-r-2 border-b-2 p-8 text-lg leading-10 shadow-lg">
+          <div className="absolute bottom-0 right-0 contactBox flex flex-col justify-evenly bg-slate-100 dark:bg-black rounded-md dark:bg-opacity-90 dark:border-slate-100 border-r-2 border-b-2 p-10 fSmall leading-10 shadow-lg">
             <h2 className="font-bold text-2xl mb-4">CONTACT :</h2>
             <div className="flex items-center">
               <FiMail className="mr-2" />
-              <p> - r.carondw@gmail.com</p>
+              <CopyToClipboard text="r.carondw@gmail.com">
+                <p>
+                  {" "}
+                  -{" "}
+                  <span
+                    className="hover:underline select-none"
+                    onClick={handleCopy}
+                  >
+                    Click
+                  </span>
+                </p>
+              </CopyToClipboard>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <AiFillLinkedin className="mr-2" />
               <a
                 href="https://www.linkedin.com/in/r%C3%A9mi-caron-07b920219/"
                 target="_blank"
               >
-                - Mon profil
+                -{" "}
+                <span className="hover:underline select-none">Mon profil</span>
               </a>
             </div>
             <div className="flex items-center">
               <AiFillGithub className="mr-2" />
               <a href="https://github.com/rcarondw" target="_blank">
-                - GitHub
+                - <span className="hover:underline select-none">GitHub</span>
               </a>
             </div>
             <div className="flex items-center">
@@ -49,8 +69,7 @@ export default function Profil() {
         </div>
       </div>
 
-      <div className="h-full w-2/3 lg:flex flex-col items-center justify-around px-32 py-16 hidden">
-        {/* <h2 className=" self-start text-3xl font-bold">Présentation :</h2> */}
+      {/* <div className="h-full w-2/3 flex flex-col items-center justify-around px-32 py-16 ">
         {document.cookie === "i18next=fr" ? (
           <p className="text-justify leading-10 tracking-wide ">
             <span className="ml-20"></span>Je m'appelle{" "}
@@ -147,7 +166,7 @@ export default function Profil() {
             continuing to enrich my expertise.
           </p>
         )}
-      </div>
+      </div> */}
       {isActive && (
         <div
           className="absolute top-0 left-0 w-full h-full z-50 bg-black bg-opacity-80 flex justify-center items-center"
