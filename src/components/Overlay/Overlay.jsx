@@ -61,7 +61,7 @@ export default function Overlay({
   return (
     <div className=" w-10 h-screen right-8 fixed z-50 flex flex-col justify-between items-center  text-gray-950 dark:text-slate-100">
       {isOpen && (
-        <div className="w-2/3 h-screen dark:bg-black bg-slate-100 fixed bg-opacity-90 flex flex-col justify-evenly text-8xl font-extrabold p-6 italic z-40">
+        <div className="w-2/3 h-screen dark:bg-black bg-slate-100 fixed bg-opacity-90 flex flex-col justify-evenly fLarge font-extrabold p-6 italic z-40">
           <li
             onClick={() => {
               handleMenu(0);

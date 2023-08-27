@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.5vw;
+  width: clamp(30px, 1.5vw, 80px);
   height: 2vh;
   cursor: pointer;
   transition: all 0.5s ease-in-out;

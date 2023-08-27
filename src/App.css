@@ -11,6 +11,16 @@ body {
   background: black;
 }
 
+.fSmall {
+}
+
+.fMedium {
+}
+
+.fLarge {
+  font-size: clamp(50px, 6vw, 100px);
+}
+
 html {
   scrollbar-width: normal;
   scroll-snap-type: y proximity;
