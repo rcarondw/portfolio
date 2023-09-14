@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Magnifier from "react-magnifier";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import photo from "../../assets/photojungle.webp";
 import CV from "../../assets/CV.jpg";
@@ -6,6 +7,7 @@ import { FiMail } from "react-icons/fi";
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import { AiOutlineFileSearch } from "react-icons/ai";
+// import "./Profil.css";
 
 export default function Profil({ setIsCopy }) {
   const [isActive, setIsActive] = useState(false);
@@ -35,7 +37,7 @@ export default function Profil({ setIsCopy }) {
                   {" "}
                   -{" "}
                   <span
-                    className="hover:underline select-none"
+                    className="cursor-pointer hover:underline select-none"
                     onClick={handleCopy}
                   >
                     Click
@@ -61,8 +63,8 @@ export default function Profil({ setIsCopy }) {
             </div>
             <div className="flex items-center">
               <AiOutlineFileSearch className="mr-2" />
-              <p className="cursor-pointer" onClick={() => setIsActive(true)}>
-                - Mon CV
+              <p className="cursor-pointer " onClick={() => setIsActive(true)}>
+                - <span className="hover:underline select-none">Mon CV</span>
               </p>
             </div>
           </div>
@@ -172,7 +174,14 @@ export default function Profil({ setIsCopy }) {
           className="absolute top-0 left-0 w-full h-full z-50 bg-black bg-opacity-80 flex justify-center items-center"
           onClick={() => setIsActive(false)}
         >
-          <img src={CV} alt="cv" className="h-[90%]" />
+          <Magnifier
+            src={CV}
+            width={"500px"}
+            mgWidth={250}
+            mgHeight={250}
+            zoomFactor={0.8}
+            className="imageMagnify"
+          />
         </div>
       )}
     </div>
