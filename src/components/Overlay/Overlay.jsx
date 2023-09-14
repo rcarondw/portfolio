@@ -69,8 +69,6 @@ export default function Overlay({
     setIsOpen(false);
   };
 
-  console.log(isOpen);
-
   return (
     <div className=" w-10 h-screen right-8 fixed z-50 flex flex-col justify-between items-center  text-gray-950 dark:text-slate-100">
       {isOpen && (
