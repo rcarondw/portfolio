@@ -7,6 +7,7 @@ export default {
     extend: {
       colors: {
         bgGray: "#090909",
+        bgGrayLighter: "#212121",
       },
       boxShadow: {
         inShadow: "inset 0px 0px 20px 8px rgba(0,0,0,0.65)",
