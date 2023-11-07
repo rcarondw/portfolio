@@ -8,14 +8,16 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import { AiOutlineFileSearch } from "react-icons/ai";
 import { IoIosArrowDropdown } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 // import "./Profil.css";
 
 export default function Profil({ setIsCopy }) {
   const [isActive, setIsActive] = useState(false);
   const [openBox1, setOpenBox1] = useState(false);
-  const [openBox2, setOpenBox2] = useState(false);
+  const [openBox2, setOpenBox2] = useState(true);
   const [openBox3, setOpenBox3] = useState(false);
   const [openBox4, setOpenBox4] = useState(false);
+  const { t } = useTranslation();
 
   const handleCopy = () => {
     setIsCopy(true);
@@ -50,12 +52,12 @@ export default function Profil({ setIsCopy }) {
   };
 
   const textBox =
-    "rounded-b-md p-4 mb-2 -mt-4 bg-bgGray border-b-2 border-r-2 ";
+    "rounded-b-md p-4 mb-2 -mt-4 dark:bg-bgGray bg-slate-200 border-b-2 border-r-2 dark:border-slate-100 border-bgGray text-gbGray text-bgGray dark:text-slate-100 z-10";
   const titreBox =
-    "flex justify-between items-center bg-bgGrayLighter rounded-md p-4 my-4 border-t-2 border-l-2";
+    "flex justify-between items-center bg-bgGrayLighter rounded-md p-6 my-4 border-t-2 border-l-2 border-bgGray dark:border-slate-100 text-lg font-bold text-slate-200 z-20";
 
   return (
-    <div className="h-screen w-full flex p-8 relative text-gray-950 dark:text-slate-100">
+    <div className="h-screen w-full flex p-8 relative text-gray-950 dark:text-slate-100 select-none">
       <div className="w-1/3 h-full  lg:flex flex-col border-t-2 border-l-2 border-bgGray dark:border-slate-100 rounded-l-md rounded-b-none relative">
         <div className=" h-[80vh] lg:w-3/4 w-full lg:m-16 rounded-md">
           <img
@@ -87,7 +89,9 @@ export default function Profil({ setIsCopy }) {
                 target="_blank"
               >
                 -{" "}
-                <span className="hover:underline select-none">Mon profil</span>
+                <span className="hover:underline select-none">
+                  {t("myProfil")}
+                </span>
               </a>
             </div>
             <div className="flex items-center">
@@ -99,7 +103,10 @@ export default function Profil({ setIsCopy }) {
             <div className="flex items-center">
               <AiOutlineFileSearch className="mr-2" />
               <p className="cursor-pointer " onClick={() => setIsActive(true)}>
-                - <span className="hover:underline select-none">Mon CV</span>
+                -{" "}
+                <span className="hover:underline select-none">
+                  {t("resume")}
+                </span>
               </p>
             </div>
           </div>
@@ -115,11 +122,10 @@ export default function Profil({ setIsCopy }) {
                 id="1"
                 onClick={(e) => handleBoxClick1(e)}
               >
-                {/* () => setOpenBox1(!openBox1) */}
                 <p>Présentation :</p>
                 <IoIosArrowDropdown
-                  className={`text-slate-100 text-2xl  ${
-                    openBox1 ? "" : "rotate-180"
+                  className={`text-slate-100 text-2xl transform duration-300 ${
+                    openBox1 ? "rotate-180" : ""
                   }`}
                 />
               </div>
@@ -138,13 +144,12 @@ export default function Profil({ setIsCopy }) {
             <div className="w-full">
               <div
                 className={`${titreBox}`}
-                // onClick={() => setOpenBox2(!openBox2)}
                 onClick={(e) => handleBoxClick2(e)}
               >
                 <p>Formation :</p>
                 <IoIosArrowDropdown
-                  className={`text-slate-100 text-2xl  ${
-                    openBox2 ? "" : "rotate-180"
+                  className={`text-slate-100 text-2xl transform duration-300 ${
+                    openBox2 ? "rotate-180" : ""
                   }`}
                 />
               </div>
@@ -183,13 +188,12 @@ export default function Profil({ setIsCopy }) {
             <div className="w-full">
               <div
                 className={`${titreBox}`}
-                // onClick={() => setOpenBox3(!openBox3)}
                 onClick={(e) => handleBoxClick3(e)}
               >
                 <p>Développement personnel :</p>
                 <IoIosArrowDropdown
-                  className={`text-slate-100 text-2xl  ${
-                    openBox3 ? "" : "rotate-180"
+                  className={`text-slate-100 text-2xl transform duration-300 ${
+                    openBox3 ? "rotate-180" : ""
                   }`}
                 />
               </div>
@@ -212,13 +216,12 @@ export default function Profil({ setIsCopy }) {
             <div className="w-full">
               <div
                 className={`${titreBox}`}
-                // onClick={() => setOpenBox4(!openBox4)}
                 onClick={(e) => handleBoxClick4(e)}
               >
                 <p>Ambitions :</p>
                 <IoIosArrowDropdown
-                  className={`text-slate-100 text-2xl  ${
-                    openBox4 ? "" : "rotate-180"
+                  className={`text-slate-100 text-2xl transform duration-300 ${
+                    openBox4 ? "rotate-180" : ""
                   }`}
                 />
               </div>
@@ -236,51 +239,124 @@ export default function Profil({ setIsCopy }) {
             </div>
           </p>
         ) : (
-          <p className="text-justify leading-10 tracking-wide ">
-            <span className="ml-20"></span>My name is{" "}
-            <span className="font-extrabold">Rémi Caron</span>, I am 32 years
-            old, and I have successfully completed my diploma in advanced web
-            and mobile application development. I pursued this enriching
-            training at{" "}
-            <span className="font-extrabold">"Wild Code School"</span> and
-            received warm congratulations from the jury.
-            <br />
-            <span className="ml-20"></span>During these two years of training, I
-            had the opportunity to participate in various projects, both within
-            the school and during my work placement in a company. My expertise
-            primarily focuses on <span className="font-extrabold">React</span>{" "}
-            in the front-end, which I skillfully combine with{" "}
-            <span className="font-extrabold">Tailwind</span>, mastering all its
-            subtleties. Regarding the back-end, I worked with{" "}
-            <span className="font-extrabold"> Node/Express</span> using{" "}
-            <span className="font-extrabold">Prisma</span> with{" "}
-            <span className="font-extrabold"> GraphQl</span>, and of course, I
-            executed all these projects with{" "}
-            <span className="font-extrabold">TypeScript</span> for better
-            security and efficiency. I also had the chance to code projects in{" "}
-            <span className="font-extrabold">Next.js</span>, as well as complete
-            applications in{" "}
-            <span className="font-extrabold">
-              MERN (MongoDB, Express, React, Node.js).
-            </span>{" "}
-            During my work placement, I even had the opportunity to work on a
-            project with <span className="font-extrabold">WordPress</span>,
-            which allowed me to broaden my skills and diversify my knowledge in
-            the development field. In addition to my learning in development.
-            <br />
-            <span className="ml-20"></span>I have also acquired a strong
-            proficiency in <span className="font-extrabold">Figma</span>, thanks
-            to creating several website designs for the company I was interning
-            at, as well as for a course project. Furthermore, I am currently
-            training in <span className="font-bold">Blender</span> in
-            association with <span className="font-bold">Three.js</span>, thus
-            opening exciting new perspectives in the world of 3D. <br />
-            <span className="ml-20"></span>Today, armed with all these
-            experiences and skills, I am driven by a strong desire to learn and
-            progress further in the field that I am so passionate about.
-            Therefore, I am actively seeking my first job in the tech industry,
-            motivated and determined to put my knowledge into practice while
-            continuing to enrich my expertise.
+          <p className="w-full text-justify leading-10 tracking-wide ">
+            <div className="w-full">
+              <div
+                className={`${titreBox}`}
+                id="1"
+                onClick={(e) => handleBoxClick1(e)}
+              >
+                <p>Presentation :</p>
+                <IoIosArrowDropdown
+                  className={`text-slate-100 text-2xl transform duration-300 ${
+                    openBox1 ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
+              {openBox1 && (
+                <div className={`${textBox}`}>
+                  <span className="ml-20"></span>My name is{" "}
+                  <span className="font-extrabold">Rémi Caron</span>, I am 32
+                  years old, and I have successfully completed my diploma in
+                  advanced web and mobile application development. I pursued
+                  this enriching training at{" "}
+                  <span className="font-extrabold">"Wild Code School"</span> and
+                  received warm congratulations from the jury.
+                </div>
+              )}
+            </div>
+            <div className="w-full">
+              <div
+                className={`${titreBox}`}
+                onClick={(e) => handleBoxClick2(e)}
+              >
+                <p>Qualification :</p>
+                <IoIosArrowDropdown
+                  className={`text-slate-100 text-2xl transform duration-300 ${
+                    openBox2 ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
+              {openBox2 && (
+                <div className={`${textBox}`} id="box-2">
+                  <span className="ml-20"></span>During these two years of
+                  training, I had the opportunity to participate in various
+                  projects, both within the school and during my work placement
+                  in a company. My expertise primarily focuses on{" "}
+                  <span className="font-extrabold">React</span> in the
+                  front-end, which I skillfully combine with{" "}
+                  <span className="font-extrabold">Tailwind</span>, mastering
+                  all its subtleties. Regarding the back-end, I worked with{" "}
+                  <span className="font-extrabold"> Node/Express</span> using{" "}
+                  <span className="font-extrabold">Prisma</span> with{" "}
+                  <span className="font-extrabold"> GraphQl</span>, and of
+                  course, I executed all these projects with{" "}
+                  <span className="font-extrabold">TypeScript</span> for better
+                  security and efficiency. I also had the chance to code
+                  projects in <span className="font-extrabold">Next.js</span>,
+                  as well as complete applications in{" "}
+                  <span className="font-extrabold">
+                    MERN (MongoDB, Express, React, Node.js).
+                  </span>{" "}
+                  During my work placement, I even had the opportunity to work
+                  on a project with{" "}
+                  <span className="font-extrabold">WordPress</span>, which
+                  allowed me to broaden my skills and diversify my knowledge in
+                  the development field. In addition to my learning in
+                  development.
+                  <br />
+                </div>
+              )}
+            </div>
+            <div className="w-full">
+              <div
+                className={`${titreBox}`}
+                onClick={(e) => handleBoxClick3(e)}
+              >
+                <p>Personal development :</p>
+                <IoIosArrowDropdown
+                  className={`text-slate-100 text-2xl transform duration-300 ${
+                    openBox3 ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
+              {openBox3 && (
+                <div className={`${textBox}`} id="box-3">
+                  <span className="ml-20"></span>I have also acquired a strong
+                  proficiency in <span className="font-extrabold">Figma</span>,
+                  thanks to creating several website designs for the company I
+                  was interning at, as well as for a course project.
+                  Furthermore, I am currently training in{" "}
+                  <span className="font-bold">Blender</span> in association with{" "}
+                  <span className="font-bold">Three.js</span>, thus opening
+                  exciting new perspectives in the world of 3D. <br />
+                </div>
+              )}
+            </div>
+            <div className="w-full">
+              <div
+                className={`${titreBox}`}
+                onClick={(e) => handleBoxClick4(e)}
+              >
+                <p className="font-bold">Ambitions :</p>
+                <IoIosArrowDropdown
+                  className={`text-slate-100 text-2xl transform duration-300 ${
+                    openBox4 ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
+              {openBox4 && (
+                <div className={`${textBox}`} id="box-4">
+                  <span className="ml-20"></span>Today, armed with all these
+                  experiences and skills, I am driven by a strong desire to
+                  learn and progress further in the field that I am so
+                  passionate about. Therefore, I am actively seeking my first
+                  job in the tech industry, motivated and determined to put my
+                  knowledge into practice while continuing to enrich my
+                  expertise.
+                </div>
+              )}
+            </div>
           </p>
         )}
       </div>
